@@ -1,5 +1,4 @@
 
-https://github.com/user-attachments/assets/a9f45744-256e-492a-8ea5-9a0b8abdfc54
 # Challenge_ONE_ForoHub
 Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
 
