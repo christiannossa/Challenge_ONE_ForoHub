@@ -49,31 +49,48 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
 
   ## Funcionalidades del proyecto.
 
-- Paquete model.
-  - Clase Autor:
-    - `Funcionalidad 1`: Se crea la tabla para almacenar los datos de los autores.
-    - `Funcionalidad 2`: Se mapea la llave foránea con la entidad 'Libro'.
-    - `Funcionalidad 3`: Se crean los constructores sin argumentos, predeterminado y personalizado.
-    - `Funcionalidad 4`: Se implementan los getters y setters.
-  - Record Datos:
-    - `Funcionalidad 1`: Se inyecta a través de un record la lista principal para poder acceder a los datos de la API de Gutendex.
-  - Record DatosAutor:
-    - `Funcionalidad 1`: Se inyecta a través de un record los datos de los autores.
-    - `Funcionalidad 2`: Se sobreescriben los elementos.
-  - Record DatosLibro:
-    - `Funcionalidad 1`: Se inyecta a través de un record los datos de los libros.
-    - `Funcionalidad 2`: Se sobreescriben los elementos.
-  - Clase Libro:
-    - `Funcionalidad 1`: Se crea la tabla para almacenar los datos de los libros.
-    - `Funcionalidad 2`: Se mapea la llave foránea con la entidad 'Autor'.
-    - `Funcionalidad 3`: Se crean el constructor predeterminado y personalizado.
-    - `Funcionalidad 4`: Se implementan los getters y setters.
-- Paquete principal.
-  - Clase Principal:
-    - `Funcionalidad 1`: Se inicializan las variables.
-    - `Funcionalidad 2`: Se crea el constructor del repositorio.
-    - `Funcionalidad 3`: Se crea el menú del proyecto.
-    - `Funcionalidad 4`: Se crean los métodos para cada una de las opciones del menú.
+- Package controller.
+  - Clase AutenticacionController:
+    - `Funcionalidad 1`: Gestionar la parte de autenticación.
+    - `Funcionalidad 2`: Se inyecta el AuthenticationManager.
+    - `Funcionalidad 3`: Se inyecta la entidad TokenService.
+    - `Funcionalidad 4`: A través del método autenticarUsuario se autentican los datos entregados por el paquete de security.
+  - Clase TopicoController:
+    - `Funcionalidad 1`: Gestionar todas las requsisiciones realizadas.
+    - `Funcionalidad 2`: Se inyecta la entidad TopicoRepository.
+    - `Funcionalidad 3`: Se crea el método registrarTopico para realizar el registro de un nuevo tópico.
+    - `Funcionalidad 4`: Se crea el método listadoTopicos para realizar el listado del total de los tópicos.
+    - `Funcionalidad 5`: Se crea el método actualizarTopico patra realizar un update en un método espesifico.
+    - `Funcionalidad 6`: Se crea el método eliminarTopico para eliminar un tópico seleccionado.
+    - `Funcionalidad 7`: Se crea el método retornarDatosTopico para realizar el mapeo de la información de cada requsición.
+- Package domain.
+  - Package curso.
+    - Enum Categoria:
+      - `Funcionalidad 1`: Se guardan los datos sobre el tipo de categoria de cada curso.
+    - Clase Curso:
+      - `Funcionalidad 1`: Se crean los atributos nombreCurso y categoriaCurso.
+      - `Funcionalidad 2`: Se crean los métodos Curso y actualizarDatos para retonar la información hacia otras entidades.
+    - Clase DatosCurso:
+      - `Funcionalidad 1`: Se crea el DTO de curso con los parametros de nombreCurso y categoriaCurso. 
+  - Package topico.
+    - Record DatosActualizarTopico:
+      - `Funcionalidad 1`: Se crea el DTO con los parametros id, titulo y mensaje para realizar el mapeo de los datos que se editarian al realizar la requisición update.
+    - Record DatosListadoTopico:
+      - `Funcionalidad 1`: Se crea el DTO con los parametros id, titulo, mensaje, fechaDeCreacion, autor, nombreCurso y categoriaCurso, para realizar el retorno de los datos de cada topico secuencialmente.
+    - Record DatosRegistroTopico:
+      -  `Funcionalidad 1`: Se crea el DTO con los parametros de titulo, mensaje, fechaDeCreacion, status, autor y curso, para realizar el registro de un nuevo tópico.
+    - Record DatosRespuestaTopico:
+      -  `Funcionalidad 1`: Se crea el DTO con los parametros de id, titulo, mensaje, fechaDeCreacion, autor y curso, para realizar el mapeo de los datos y poderlos enviar devuelta a las demas requisiciones.
+    - Enum Status:
+      -  `Funcionalidad 1`: Se guardan los datos sobre el tipo de estatus de cada requisición realizada.
+    - Clase Topico:
+      -  `Funcionalidad 1`: Se ingresan como parametros id, titulo, mensaje, fechaDeCreacion, status, autor, activo y curso.
+      -  `Funcionalidad 2`: Se crea el método actualizarDatos para realizar la consulta y el envio de los datos informados.
+      -  `Funcionalidad 3`: Se crea el método desactivarToico para realizar el delete lógico en la base de datos del tópico seleccionado.
+    - Interface TopicoRepository:
+      -  `Funcionalidad 1`: Se ingresan como parametros id, titulo, mensaje, fechaDeCreacion, status, autor, activo y curso.
+  - Package usuarios.
+  - Clase ValidacionException:
 - Paquete repository.
   - Interface AutorRepository:
     - `Funcionalidad 1`: Se conecta a JpaRepository.
