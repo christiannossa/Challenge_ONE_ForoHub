@@ -88,14 +88,26 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
       -  `Funcionalidad 2`: Se crea el método actualizarDatos para realizar la consulta y el envio de los datos informados.
       -  `Funcionalidad 3`: Se crea el método desactivarToico para realizar el delete lógico en la base de datos del tópico seleccionado.
     - Interface TopicoRepository:
-      -  `Funcionalidad 1`: Se ingresan como parametros id, titulo, mensaje, fechaDeCreacion, status, autor, activo y curso.
+      -  `Funcionalidad 1`: Se crea el Repository con extension a JPA.
+      -  `Funcionalidad 2`: Se crea el método findByActivoTrue para realizar la consulta en el repositorio y desactivar el tópico de la base de datos.
   - Package usuarios.
+    - Record DatosAutenticacionUsuario:
+      - `Funcionalidad 1`: Se crea el DTO de Usuario con los parámetros login y clave.
+    - Clase Usuario:
+      - `Funcionalidad 1`: Se crean los atributos id, login, clave.
+      - `Funcionalidad 2`: Se sobreescriben los métodos correspondientes para la autenticación.
+    - Interface UsuarioRepository:
+      - `Funcionalidad 1`: Se crea el Repository con extension a JPA.
+      - `Funcionalidad 2`: Se crea el método findByLogin para buscar el usuario en la base de datos.
   - Clase ValidacionException:
-- Paquete repository.
-  - Interface AutorRepository:
-    - `Funcionalidad 1`: Se conecta a JpaRepository.
-    - `Funcionalidad 2`: Se realizan las consultas JPA y JPQL en la base de datos para Autor.
-  - Interface LibroRepository:
+    - `Funcionalidad 1`: Se crea la clase con extension a RuntimeException.
+    - `Funcionalidad 2`: Se crea el método ValidacionException para recibir el mensaje indicando el tipo de excepción.
+- Package infra.
+  - Package errores.
+    - Clase TratadorDeErrores:
+      - `Funcionalidad 1`: Se crean los métodos para tratar los errores con ExceptionHandler.
+      - `Funcionalidad 2`: Se crea un record DatosErrorValidacion, para validar el mensaje, a su vez se crea el método DatosErrorValidacion y eniar el mensaje de error por defecto. 
+  - Package security:
     - `Funcionalidad 1`: Se conecta a JpaRepository.
     - `Funcionalidad 2`: Se realizan las consultas JPA y JPQL en la base de datos para Libro.
 - Paquete service.
