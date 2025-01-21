@@ -2,7 +2,7 @@
 Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
 
 - Estado del proyecto: Finalizado con opción de actualización.
-  # Se desarrolló una aplicación API REST en el Framework Spring Boot 3, para un foro, con la cual a través del módelo "CRUD" se pueden realizar registros, consultas, actualizacion y eliminación de Topicos en el foro "ForoHub".
+  # Se desarrolló una aplicación API REST en el Framework Spring Boot 3, para un foro, con la cual a través del modelo "CRUD" se pueden realizar registros, consultas, actualización y eliminación de Tópicos en el foro "ForoHub".
   - En total, la aplicación está compuesta por los siguientes paquetes con las siguientes entidades:
 
     - controller.
@@ -56,39 +56,39 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
     - `Funcionalidad 3`: Se inyecta la entidad TokenService.
     - `Funcionalidad 4`: A través del método autenticarUsuario se autentican los datos entregados por el paquete de security.
   - Clase TopicoController:
-    - `Funcionalidad 1`: Gestionar todas las requsisiciones realizadas.
+    - `Funcionalidad 1`: Gestionar todas las requisiciones realizadas.
     - `Funcionalidad 2`: Se inyecta la entidad TopicoRepository.
     - `Funcionalidad 3`: Se crea el método registrarTopico para realizar el registro de un nuevo tópico.
     - `Funcionalidad 4`: Se crea el método listadoTopicos para realizar el listado del total de los tópicos.
-    - `Funcionalidad 5`: Se crea el método actualizarTopico patra realizar un update en un método espesifico.
+    - `Funcionalidad 5`: Se crea el método actualizarTopico para realizar un update en un método específico.
     - `Funcionalidad 6`: Se crea el método eliminarTopico para eliminar un tópico seleccionado.
-    - `Funcionalidad 7`: Se crea el método retornarDatosTopico para realizar el mapeo de la información de cada requsición.
+    - `Funcionalidad 7`: Se crea el método retornarDatosTopico para realizar el mapeo de la información de cada requisición.
 - Package domain.
   - Package curso.
     - Enum Categoria:
-      - `Funcionalidad 1`: Se guardan los datos sobre el tipo de categoria de cada curso.
+      - `Funcionalidad 1`: Se guardan los datos sobre el tipo de categoría de cada curso.
     - Clase Curso:
       - `Funcionalidad 1`: Se crean los atributos nombreCurso y categoriaCurso.
-      - `Funcionalidad 2`: Se crean los métodos Curso y actualizarDatos para retonar la información hacia otras entidades.
+      - `Funcionalidad 2`: Se crean los métodos Curso y actualizarDatos para retornar la información hacia otras entidades.
     - Clase DatosCurso:
-      - `Funcionalidad 1`: Se crea el DTO de curso con los parametros de nombreCurso y categoriaCurso. 
+      - `Funcionalidad 1`: Se crea el DTO de curso con los parámetros de nombreCurso y categoriaCurso. 
   - Package topico.
     - Record DatosActualizarTopico:
-      - `Funcionalidad 1`: Se crea el DTO con los parametros id, titulo y mensaje para realizar el mapeo de los datos que se editarian al realizar la requisición update.
+      - `Funcionalidad 1`: Se crea el DTO con los parámetros id, título y mensaje para realizar el mapeo de los datos que se editarían al realizar la requisición update.
     - Record DatosListadoTopico:
-      - `Funcionalidad 1`: Se crea el DTO con los parametros id, titulo, mensaje, fechaDeCreacion, autor, nombreCurso y categoriaCurso, para realizar el retorno de los datos de cada topico secuencialmente.
+      - `Funcionalidad 1`: Se crea el DTO con los parámetros id, título, mensaje, fechaDeCreacion, autor, nombreCurso y categoriaCurso, para realizar el retorno de los datos de cada tópico secuencialmente.
     - Record DatosRegistroTopico:
-      -  `Funcionalidad 1`: Se crea el DTO con los parametros de titulo, mensaje, fechaDeCreacion, status, autor y curso, para realizar el registro de un nuevo tópico.
+      -  `Funcionalidad 1`: Se crea el DTO con los parámetros de título, mensaje, fechaDeCreacion, status, autor y curso, para realizar el registro de un nuevo tópico.
     - Record DatosRespuestaTopico:
-      -  `Funcionalidad 1`: Se crea el DTO con los parametros de id, titulo, mensaje, fechaDeCreacion, autor y curso, para realizar el mapeo de los datos y poderlos enviar devuelta a las demas requisiciones.
+      -  `Funcionalidad 1`: Se crea el DTO con los parámetros de id, título, mensaje, fechaDeCreacion, autor y curso, para realizar el mapeo de los datos y poderlos enviar devuelta a las demás requisiciones.
     - Enum Status:
       -  `Funcionalidad 1`: Se guardan los datos sobre el tipo de estatus de cada requisición realizada.
     - Clase Topico:
-      -  `Funcionalidad 1`: Se ingresan como parametros id, titulo, mensaje, fechaDeCreacion, status, autor, activo y curso.
-      -  `Funcionalidad 2`: Se crea el método actualizarDatos para realizar la consulta y el envio de los datos informados.
+      -  `Funcionalidad 1`: Se ingresan como parámetros id, título, mensaje, fechaDeCreacion, status, autor, activo y curso.
+      -  `Funcionalidad 2`: Se crea el método actualizarDatos para realizar la consulta y el envío de los datos informados.
       -  `Funcionalidad 3`: Se crea el método desactivarToico para realizar el delete lógico en la base de datos del tópico seleccionado.
     - Interface TopicoRepository:
-      -  `Funcionalidad 1`: Se crea el Repository con extension a JPA.
+      -  `Funcionalidad 1`: Se crea el Repository con extensión a JPA.
       -  `Funcionalidad 2`: Se crea el método findByActivoTrue para realizar la consulta en el repositorio y desactivar el tópico de la base de datos.
   - Package usuarios.
     - Record DatosAutenticacionUsuario:
@@ -97,7 +97,7 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
       - `Funcionalidad 1`: Se crean los atributos id, login, clave.
       - `Funcionalidad 2`: Se sobreescriben los métodos correspondientes para la autenticación.
     - Interface UsuarioRepository:
-      - `Funcionalidad 1`: Se crea el Repository con extension a JPA.
+      - `Funcionalidad 1`: Se crea el Repository con extensión a JPA.
       - `Funcionalidad 2`: Se crea el método findByLogin para buscar el usuario en la base de datos.
   - Clase ValidacionException:
     - `Funcionalidad 1`: Se crea la clase con extensión a RuntimeException.
@@ -116,9 +116,9 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
       - `Funcionalidad 1`: Se crea el DTO DatosJWTToken con jwTtoken como parámetro.
     - Clase SecurityConfigurations:
       - `Funcionalidad 1`: Se inyecta el filtro a través de SecurityFilter.
-      - `Funcionalidad 2`: Se crea el filtro securityFilterChain para gestion del acceso de usuario.
+      - `Funcionalidad 2`: Se crea el filtro securityFilterChain para gestión del acceso de usuario.
       - `Funcionalidad 3`: Se crea el authenticationManager.
-      - `Funcionalidad 4`: Se crea el passwordEncoder para la gestion del algoritmo BCrypt.
+      - `Funcionalidad 4`: Se crea el passwordEncoder para la gestión del algoritmo BCrypt.
     - Clase SecurityFilter:
       - `Funcionalidad 1`: Se crea la clase con extensión a OncePerRequestFilter.
       - `Funcionalidad 2`: Se inyecta el TokenService.
@@ -134,7 +134,7 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
     - Clase SpringDocConfiguration:
       - `Funcionalidad 1`: Se crea el método customOpenAPI, para gestionar el bearer-key a través de JWT de OpenAPI.
   - Clase ForohubApplication:
-    - `Funcionalidad 1`: Se crea la clase de ejecución de ejecución ForohubApplication.
+    - `Funcionalidad 1`: Se crea la clase ForohubApplication para la ejecución de la aplicación.
     - `Funcionalidad 2`: Se crea el método main de la clase ForohubApplication.
 - Package resources.
   - Package db.
@@ -150,6 +150,8 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
     - `Funcionalidad 2`: Se adicionan las propiedades de hibernate para SQL.
     - `Funcionalidad 3`: Se agrega el stacktrace.
     - `Funcionalidad 4`: Se agrega la llave para JWT, a través de api.security.secret.
-- Capturas Proyecto.
+- Capturas del proyecto.
   -  l
 - Ejecución del proyecto:
+
+
