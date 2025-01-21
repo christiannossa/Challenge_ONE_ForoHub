@@ -100,14 +100,14 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
       - `Funcionalidad 1`: Se crea el Repository con extension a JPA.
       - `Funcionalidad 2`: Se crea el método findByLogin para buscar el usuario en la base de datos.
   - Clase ValidacionException:
-    - `Funcionalidad 1`: Se crea la clase con extension a RuntimeException.
+    - `Funcionalidad 1`: Se crea la clase con extensión a RuntimeException.
     - `Funcionalidad 2`: Se crea el método ValidacionException para recibir el mensaje indicando el tipo de excepción.
 - Package infra.
   - Package errores.
     - Clase TratadorDeErrores:
       - `Funcionalidad 1`: Se crean los métodos para tratar los errores con ExceptionHandler.
       - `Funcionalidad 2`: Se crea un record DatosErrorValidacion, para validar el mensaje, a su vez se crea el método DatosErrorValidacion para enviar el mensaje de error por defecto. 
-  - Package security:
+  - Package security.
     - Clase AutenticacionService:
       - `Funcionalidad 1`: Se crea la clase AutenticacionService implementando UserDetailsService.
       - `Funcionalidad 2`: Se inyecta el repositorio UsuarioRepository.
@@ -116,25 +116,40 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
       - `Funcionalidad 1`: Se crea el DTO DatosJWTToken con jwTtoken como parámetro.
     - Clase SecurityConfigurations:
       - `Funcionalidad 1`: Se inyecta el filtro a través de SecurityFilter.
-- Paquete service.
-  - Clase AutorService:
-    - `Funcionalidad 1`: Se inyecta el repositorio para la clase Autor.
-    - `Funcionalidad 2`: Se crean los métodos para acceder a las consultas del repositorio AutorRepository.
-  - Clase ConsumoAPI:
-    - `Funcionalidad 1`: Se crea el método para consumir la API.
-  - Clase ConvierteDatos:
-    - `Funcionalidad 1`: Se conecta a la interface IConvierteDatos.
-    - `Funcionalidad 2`: Se sobreescribe el método obtenerDatos de la interface IConvierteDatos para realizar el mapeo de los datos en la API.
-  - Interface IConvierteDatos:
-    - `Funcionalidad 1`: Se crea el método obtenerDatos para realizar el mapeo de los datos en la API.
-  - Clase LibroService:
-    - `Funcionalidad 1`: Se inyecta el repositorio para la clase Libro.
-    - `Funcionalidad 2`: Se crean los métodos para acceder a las consultas del repositorio LibroRepository.
-  - Clase LiteraluraChallengeApplication:
-    - `Funcionalidad 1`: Clase principal de la aplicación para ejecutar el proyecto.
-    - `Funcionalidad 2`: Se conecta a CommandLineRunner.
-    - `Funcionalidad 3`: Se crea el método main.
-    - `Funcionalidad 4`: Se inyecta la clase Principal para acceder al proyecto y ejecutar el método 'muestraElMenu'.
+      - `Funcionalidad 2`: Se crea el filtro securityFilterChain para gestion del acceso de usuario.
+      - `Funcionalidad 3`: Se crea el authenticationManager.
+      - `Funcionalidad 4`: Se crea el passwordEncoder para la gestion del algoritmo BCrypt.
+    - Clase SecurityFilter:
+      - `Funcionalidad 1`: Se crea la clase con extensión a OncePerRequestFilter.
+      - `Funcionalidad 2`: Se inyecta el TokenService.
+      - `Funcionalidad 3`: Se inyecta el UsuarioRepository.
+      - `Funcionalidad 4`: Se crea el filtro doFilterInternal, para realizar la autorización del usuario usando Bearer.
+    - Clase TokenService:
+      - `Funcionalidad 1`: Se crea el servicio TokenService para validar los datos de usuario.
+      - `Funcionalidad 2`: Se inyecta la llave para realizar la comprobación.
+      - `Funcionalidad 3`: Se crea el método generarToken, para verificar la llave con JWT.
+      - `Funcionalidad 4`: Se crea el método getSubject, para validar la firma.
+      - `Funcionalidad 5`: Se crea el método generarFechaExpiracion, para determinar la fecha de expiración del token generado.
+  - Package springdoc.
+    - Clase SpringDocConfiguration:
+      - `Funcionalidad 1`: Se crea el método customOpenAPI, para gestionar el bearer-key a través de JWT de OpenAPI.
+  - Clase ForohubApplication:
+    - `Funcionalidad 1`: Se crea la clase de ejecución de ejecución ForohubApplication.
+    - `Funcionalidad 2`: Se crea el método main de la clase ForohubApplication.
+- Package resources.
+  - Package db.
+    - Package migration
+      - V1__create-table-usuarios
+        - `Funcionalidad 1`: Se crea la primera migration para crear la tabla usuarios.
+      - V2__create-table-topicos
+        - `Funcionalidad 1`: Se crea la segunda migration para crear la tabla topicos.
+      - V3__alter-table-topicos-add-activo
+        - `Funcionalidad 1`: Se crea la tercera migration para modificar la tabla topicos, y agregar la columna activo.
+  - application.properties:
+    - `Funcionalidad 1`: Se realiza la conexión con la base de datos.
+    - `Funcionalidad 2`: Se adicionan las propiedades de hibernate para SQL.
+    - `Funcionalidad 3`: Se agrega el stacktrace.
+    - `Funcionalidad 4`: Se agrega la llave para JWT, a través de api.security.secret.
 - Capturas Proyecto.
   -  l
 - Ejecución del proyecto:
