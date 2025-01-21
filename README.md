@@ -151,7 +151,21 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
     - `Funcionalidad 3`: Se agrega el stacktrace.
     - `Funcionalidad 4`: Se agrega la llave para JWT, a través de api.security.secret.
 - Capturas del proyecto.
-  -  l
+  -  ![1](https://github.com/user-attachments/assets/f496af91-9ce4-4a52-9130-9e1d4a7dad91)
+  -  ![2](https://github.com/user-attachments/assets/423007ec-fc5b-4559-a594-931af7f331bc)
+  -  ![3](https://github.com/user-attachments/assets/6b030463-40d2-40f0-a23b-685fb4d358ba)
+  -  ![4](https://github.com/user-attachments/assets/311f8188-752c-41b7-b802-ffb0eb6cedcb)
+  -  ![5](https://github.com/user-attachments/assets/08a627c2-dcf9-4f4d-a232-ed0a5531b00f)
+  -  ![6](https://github.com/user-attachments/assets/0a148cb0-94cc-4466-830a-93b975b7bf37)
+  -  ![7](https://github.com/user-attachments/assets/3b72305d-9205-46b7-94ea-a4e66761abc0)
+  -  ![8](https://github.com/user-attachments/assets/a256e902-47c0-4d9d-a6f2-bb274a072b59)
+  -  ![9](https://github.com/user-attachments/assets/2ab0ae61-f3eb-429b-b15b-7b8dab19ea42)
+  -  ![10](https://github.com/user-attachments/assets/13eab668-1a68-47cd-a66d-f9789b81e525)
+  -  ![11](https://github.com/user-attachments/assets/7a92635a-0c35-4449-93a6-faee48954830)
+  -  ![12](https://github.com/user-attachments/assets/b6ebcc11-77e8-400c-815b-48fbe0a9de83)
+  -  ![13](https://github.com/user-attachments/assets/43d18099-c148-46a8-8818-57caba20b553)
+  -  ![14](https://github.com/user-attachments/assets/df981061-60d5-49fc-947c-4b4e76a943f1)
+  -  ![15](https://github.com/user-attachments/assets/a4784cbd-eb55-4bf6-b0a9-5560c6b6ea02)
 - Ejecución del proyecto:
 
 
