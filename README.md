@@ -106,10 +106,16 @@ Challenge ForoHub, realizado para el programa ONE de Oracle y AluraLATAM.
   - Package errores.
     - Clase TratadorDeErrores:
       - `Funcionalidad 1`: Se crean los métodos para tratar los errores con ExceptionHandler.
-      - `Funcionalidad 2`: Se crea un record DatosErrorValidacion, para validar el mensaje, a su vez se crea el método DatosErrorValidacion y eniar el mensaje de error por defecto. 
+      - `Funcionalidad 2`: Se crea un record DatosErrorValidacion, para validar el mensaje, a su vez se crea el método DatosErrorValidacion para enviar el mensaje de error por defecto. 
   - Package security:
-    - `Funcionalidad 1`: Se conecta a JpaRepository.
-    - `Funcionalidad 2`: Se realizan las consultas JPA y JPQL en la base de datos para Libro.
+    - Clase AutenticacionService:
+      - `Funcionalidad 1`: Se crea la clase AutenticacionService implementando UserDetailsService.
+      - `Funcionalidad 2`: Se inyecta el repositorio UsuarioRepository.
+      - `Funcionalidad 3`: Se crea el método loadUserByUsername para buscar el registro en la base de datos.
+    - Record DatosJWTToken:
+      - `Funcionalidad 1`: Se crea el DTO DatosJWTToken con jwTtoken como parámetro.
+    - Clase SecurityConfigurations:
+      - `Funcionalidad 1`: Se inyecta el filtro a través de SecurityFilter.
 - Paquete service.
   - Clase AutorService:
     - `Funcionalidad 1`: Se inyecta el repositorio para la clase Autor.
